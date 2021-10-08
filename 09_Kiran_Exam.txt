@@ -1,0 +1,164 @@
+exam@debian:~$ mkdir FISAT
+exam@debian:~$ cd FISAT
+exam@debian:~/FISAT$ mkdir Day1
+exam@debian:~/FISAT$ mkdir Day2
+exam@debian:~/FISAT$ mkdir Day3
+exam@debian:~/FISAT$ ls
+Day1  Day2  Day3
+exam@debian:~/FISAT$ cd Day1
+exam@debian:~/FISAT/Day1$ cat >fi.txt
+onam 
+exam@debian:~/FISAT/Day1$ cat >f2.txt
+xmas
+exam@debian:~/FISAT/Day1$ cat >f3.txt
+vishu
+exam@debian:~/FISAT/Day1$ cd ..
+exam@debian:~/FISAT$ cd Day2
+exam@debian:~/FISAT/Day2$ cat >m1.txt
+fisat
+exam@debian:~/FISAT/Day2$ cat >m2.txt
+ernakulam
+exam@debian:~/FISAT/Day2$ cd ..
+exam@debian:~/FISAT$ cd Day3
+exam@debian:~/FISAT/Day3$ cat >c1.txt
+ktu
+exam@debian:~/FISAT/Day3$ 
+exam@debian:~/FISAT/Day3$ cat >c2.txt
+lab exam
+exam@debian:~/FISAT/Day3$ ls
+c1.txt  c2.txt
+exam@debian:~/FISAT/Day3$ cd ..
+exam@debian:~/FISAT$ cd Day3
+exam@debian:~/FISAT/Day3$ cd ..
+exam@debian:~/FISAT$ cd Day2
+
+Q1
+
+exam@debian:~/FISAT/Day2$ cat m1.txt m2.txt >> m3.txt
+exam@debian:~/FISAT/Day2$ cat m3.txt
+fisat
+ernakulam
+
+Q2
+
+exam@debian:~/FISAT/Day2$ cp  m3.txt  ~/FISAT/Day3/c3
+
+
+exam@debian:~/FISAT/Day2$ cd ..
+exam@debian:~/FISAT$ cd Day3
+exam@debian:~/FISAT/Day3$ ls
+c1.txt  c2.txt  c3
+exam@debian:~/FISAT/Day3$ cat c3
+fisat
+ernakulam
+exam@debian:~/FISAT/Day3$ cd ..
+
+Q3
+
+exam@debian:~/FISAT$ cd Day1
+exam@debian:~/FISAT/Day1$ ls -l
+total 12
+-rw-r--r-- 1 exam exam 5 Oct  8 10:02 f2.txt
+-rw-r--r-- 1 exam exam 6 Oct  8 10:03 f3.txt
+-rw-r--r-- 1 exam exam 6 Oct  8 10:02 fi.txt
+exam@debian:~/FISAT/Day1$ ls -al
+total 20
+drwxr-xr-x 2 exam exam 4096 Oct  8 10:03 .
+drwxr-xr-x 5 exam exam 4096 Oct  8 10:02 ..
+-rw-r--r-- 1 exam exam    5 Oct  8 10:02 f2.txt
+-rw-r--r-- 1 exam exam    6 Oct  8 10:03 f3.txt
+-rw-r--r-- 1 exam exam    6 Oct  8 10:02 fi.txt
+exam@debian:~/FISAT/Day1$ chmod -g-wt fi.txt
+exam@debian:~/FISAT/Day1$ ls -al
+total 20
+drwxr-xr-x 2 exam exam 4096 Oct  8 10:03 .
+drwxr-xr-x 5 exam exam 4096 Oct  8 10:02 ..
+-rw-r--r-- 1 exam exam    5 Oct  8 10:02 f2.txt
+-rw-r--r-- 1 exam exam    6 Oct  8 10:03 f3.txt
+---------- 1 exam exam    6 Oct  8 10:02 fi.txt
+
+Q4
+
+exam@debian:~/FISAT/Day1$ pwd
+/home/exam/FISAT/Day1
+
+Q5
+exam@debian:~/FISAT/Day1$ ps -aux
+
+
+
+ SHELL 
+ 
+
+echo -e " FIND AREA OF THE FOLLOWING \n MENU \n 1.AREA OF CIRCLE \n 2.AREA OF RECTANGLE \n 3.AREA OF TRIANGLE \n"
+echo "MY CHOICE IS :"
+read ch
+case $ch in
+    1) echo "Enter the radius : "
+       read r
+       c=`expr 22 \* $r \* $r`
+       d=`expr $c / 7`
+       echo "Area of circle is : $d"
+       ;;
+    2)echo "Enter the lenght : "
+      read l
+      echo "Enter the breadth :"
+      read b
+      c=`expr $l \* $b`
+      
+      echo "Area of rectangle is : $c"
+      ;;
+    3)echo "Enter the breadth : "
+      read b
+      echo "Enter the height :"
+      read h
+      c=`expr $b \* $h`
+      d=`expr $c / 2`
+      echo "Area of triangle : $d " ;;
+    esac
+      
+  OUTPUT
+  
+  exam@debian:~$ bash a.sh
+ FIND AREA OF THE FOLLOWING 
+ MENU 
+ 1.AREA OF CIRCLE 
+ 2.AREA OF RECTANGLE 
+ 3.AREA OF TRIANGLE 
+
+MY CHOICE IS :
+1
+Enter the radius : 
+5
+Area of circle is : 78
+exam@debian:~$ bash a.sh
+ FIND AREA OF THE FOLLOWING 
+ MENU 
+ 1.AREA OF CIRCLE 
+ 2.AREA OF RECTANGLE 
+ 3.AREA OF TRIANGLE 
+
+MY CHOICE IS :
+2
+Enter the lenght : 
+6
+Enter the breadth :
+7
+Area of rectangle is : 42
+exam@debian:~$ bash a.sh
+ FIND AREA OF THE FOLLOWING 
+ MENU 
+ 1.AREA OF CIRCLE 
+ 2.AREA OF RECTANGLE 
+ 3.AREA OF TRIANGLE 
+
+MY CHOICE IS :
+3
+Enter the breadth : 
+6
+Enter the height :
+7
+Area of triangle : 21 
+
+  
+
